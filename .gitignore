@@ -1,0 +1,24 @@
+# Secrets — never commit the real .env (use .env.example instead)
+.env
+.env.*
+!.env.example
+
+# Local-only data pack (not in git): database + product images
+data/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node / build output
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.log

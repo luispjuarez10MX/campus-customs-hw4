@@ -1,0 +1,37 @@
+# Campus Customs website + chatbot backend (MGT 409 – Homework 4)
+# Tested with Python 3.14 on macOS. Minimum versions = the versions this was built and tested with.
+#
+# Setup (from the hw4/ folder):
+#   python3 -m venv .venv
+#   source .venv/bin/activate          (Windows: .venv\Scripts\activate)
+#   pip install -r requirements.txt
+#   cp .env.example .env               then put your Portkey key in .env
+#   uvicorn backend.main:app --reload --port 8000
+#
+# Frontend (React + Vite + TypeScript, from hw4/frontend/):
+#   npm install
+#   npm run dev                        then open http://localhost:5173
+#
+# The course data folder (data/campus_customs.db, data/products/) is not included;
+# place it inside hw4/ or next to it, or set CAMPUS_CUSTOMS_DATA_DIR in .env.
+
+# Web API framework for the backend
+fastapi>=0.142.2
+
+# ASGI server that runs the FastAPI app
+uvicorn[standard]>=0.54.0
+
+# Typed API and agent models in backend/models.py
+pydantic>=2.13.5
+
+# Validates email addresses on account sign-up (pydantic EmailStr)
+email-validator>=2.3.0
+
+# Agent framework with its OpenAI provider: the chatbot agent (added in a later problem)
+pydantic-ai-slim[openai]>=2.54.0
+
+# OpenAI client, pointed at the Portkey gateway
+openai>=3.26.0
+
+# Loads PORTKEY_API_KEY and settings from .env
+python-dotenv>=1.2.4
